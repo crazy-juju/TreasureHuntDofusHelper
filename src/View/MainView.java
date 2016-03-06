@@ -5,7 +5,6 @@
  */
 package View;
 
-import Controller.AddController;
 import Model.Zone;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -13,10 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
-import javafx.scene.layout.Border;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;

@@ -44,11 +44,11 @@ public class NewHintPanel extends JPanel implements ActionListener{
         posy=new JTextField(5);
         this.setLayout(new GridBagLayout());
         cont.fill= GridBagConstraints.BOTH;
-        init();
+        this.initpanel();
         this.setVisible(true);
     }
     
-    public void init(){
+    public void initpanel(){
         
         this.removeAll();
         cont.gridx=0;
@@ -89,10 +89,10 @@ public class NewHintPanel extends JPanel implements ActionListener{
         if(e.getSource()==valid){
             if(AddController.AddHintController(zones, list_zones.getSelectedItem().toString(),label.getText(),category.getText(),posx.getText(),posy.getText())){
                 log.setText(" Indice ajouté avec succés ");
-                this.init();
+                this.initpanel();
             }else{
                 log.setText(" Erreur dans l'ajout de l'indice ");
-                this.init();
+                this.initpanel();
             }
         }
     }
