@@ -8,6 +8,7 @@ package View;
 import Controller.AddController;
 import Model.Zone;
 import java.awt.Color;
+import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -29,6 +30,7 @@ public class MainView extends JFrame implements ActionListener {
     JMenuItem save,new_zone,new_hint,search;
     JPanel panel= new JPanel();
     ArrayList<Zone> zones= new ArrayList<>();
+    GridBagConstraints cont = new GridBagConstraints();
     
     public MainView(){
         this.loadAll();
@@ -61,7 +63,7 @@ public class MainView extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
                 
     }
-    
+
     public void updatePanel(JPanel pano){
         panel.removeAll();
         panel=pano;
@@ -102,9 +104,14 @@ public class MainView extends JFrame implements ActionListener {
         }
         if(e.getSource()==this.new_hint){
             NewHintPanel nhp = new NewHintPanel(zones);
-             this.updatePanel(nhp);
+            this.updatePanel(nhp);
         }
-    
+       if(e.getSource()==this.search){
+           SearchPanel sp = new SearchPanel(zones);
+           
+           this.updatePanel(sp);
+       }
+       
     }
     
 }

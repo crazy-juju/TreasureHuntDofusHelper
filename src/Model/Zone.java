@@ -74,4 +74,28 @@ public class Zone {
     public void AddHint(String hint_label,String hint_category,String hint_pos_x,String hint_pos_y){
         this.hints.add(new Hint(hint_label,hint_category,hint_pos_x,hint_pos_y));
     }
+    
+    public ArrayList<Hint> FilterHints(String hint_label,String hint_category){
+        ArrayList<Hint> tmp = new ArrayList<>();
+        if(hint_label.length()== 0 && hint_category.length()== 0){
+            return hints;
+        }else{
+            Boolean cat_void= false,lab_void=false;
+            if(hint_category.length()==0){
+                cat_void=true;
+            }
+            if(hint_label.length()==0){
+                lab_void=true;
+            }
+            for(int i=0;i<hints.size();i++){
+                if(cat_void || (hint_category.length()!=0 && hint_category.equals(hints.get(i).category))){
+                    if(lab_void || (hint_label.length()!=0 && hint_label.equals(hints.get(i).label))){
+                    tmp.add(hints.get(i));   
+                    }
+                }
+
+            }
+            return tmp;
+        }
+    }
 }
