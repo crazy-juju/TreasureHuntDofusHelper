@@ -25,7 +25,7 @@ public class AddController {
     
     public static boolean AddHintController(ArrayList<Zone> zones,String zone_label,String label,String category,String x,String y){
 
-        if(label == null || label.isEmpty() || category == null || category.isEmpty() || x==null || x.isEmpty() || y==null || y.isEmpty() || HintAlreadyExist(zones, zone_label, label)){
+        if(label == null || label.isEmpty() || category == null || category.isEmpty() || x==null || x.isEmpty() || y==null || y.isEmpty()){
             
             return false;
         }

@@ -92,12 +92,13 @@ public class SearchPanel extends JPanel implements ActionListener{
         }
         
         constr.gridy+=1;
-        constr.gridwidth=3;
-        
+        constr.gridwidth=panel.getWidth();
+        constr.gridheight=panel.getHeight();
 
         pane = new JScrollPane(panel);
-        this.add(pane);
+        this.add(pane,constr);
         constr.gridwidth=1;
+        constr.gridheight=1;
     }
 
     
