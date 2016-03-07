@@ -49,8 +49,9 @@ public class Zone {
     
     public void SaveZone(){
         File f = new File(System.getProperty("user.dir")+"/src/Data/"+this.label+".thdhsave"); 
-        if(!f.exists()){
         File y = new File(System.getProperty("user.dir")+"/src/Data/");
+        if(!y.exists()){
+        
         y.setWritable(true);
         y.setReadable(true);
         y.mkdirs();
