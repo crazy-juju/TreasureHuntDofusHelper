@@ -78,12 +78,18 @@ public class MainView extends JFrame implements ActionListener {
         if(zones.size()!=0){
             zones.clear();
         }
-        File directory = new File ("src/Data/");
+        System.out.println(System.getProperty("user.dir"));
+        File directory = new File (System.getProperty("user.dir")+"/src/Data/");
         String[] zones_label=directory.list();
+        try{
         for(int i=0;i<zones_label.length;i++){
             zones.add(new Zone());
             zones.get(i).LoadZone(zones_label[i]);
         }
+        }catch (NullPointerException npe){
+            
+        }
+        
     }
     
     @Override

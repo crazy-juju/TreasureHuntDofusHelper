@@ -36,7 +36,7 @@ public class Zone {
     }
     public void LoadZone(String zone_label){
         try {
-            File f=new File("src/Data/"+zone_label);
+            File f=new File(System.getProperty("user.dir")+"/src/Data/"+zone_label);
             Scanner sc=new Scanner(f);
             this.label=sc.next();
             while(sc.hasNext()){
@@ -48,7 +48,11 @@ public class Zone {
     }
     
     public void SaveZone(){
-        File f = new File("src/Data/"+this.label+".thdhsave");       
+        File f = new File(System.getProperty("user.dir")+"/src/Data/"+this.label+".thdhsave"); 
+        File y = new File(System.getProperty("user.dir")+"/src/Data/");
+        y.setWritable(true);
+        y.setReadable(true);
+        y.mkdirs();
         try
         {
             if(f.exists()==false){              
