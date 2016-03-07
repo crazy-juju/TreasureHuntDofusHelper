@@ -52,9 +52,7 @@ public class Zone {
         File y = new File(System.getProperty("user.dir")+"/src/Data/");
         if(!y.exists()){
         
-        y.setWritable(true);
-        y.setReadable(true);
-        y.mkdirs();
+
         }
         try
         {
@@ -73,7 +71,11 @@ public class Zone {
         }   
         catch (IOException exception)
         {
-            System.out.println ("Erreur lors de l'écriture : " + exception.getMessage());
+           System.out.println ("Erreur lors de l'écriture : " + exception.getMessage());
+           y.setWritable(true);
+           y.setReadable(true);
+           y.mkdirs();
+           this.SaveZone();
         }
         
     }
